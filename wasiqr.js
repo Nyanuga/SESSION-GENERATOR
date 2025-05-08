@@ -28,7 +28,7 @@ const {
 } = require("node:fs/promises")
 router.get('/', async (req, res) => {
 	const id = makeid();
-	async function PRINCE_JUNIOR_V1_QR_CODE() {
+	async function PRINCE_JUNIOR_V2_QR_CODE() {
 		const {
 			state,
 			saveCreds
@@ -58,19 +58,19 @@ router.get('/', async (req, res) => {
 				   let b64data = Buffer.from(data).toString('base64');
 				   let session = await Qr_Code_By_Prince_Junior_Tech.sendMessage(Qr_Code_By_Prince_junior_Tech.user.id, { text: '' + b64data });
 	
-				   let PRINCE_JUNIOR_V1_TEXT = `
+				   let PRINCE_JUNIOR_V2_TEXT = `
 *_Session Connected By Prince junior Tech_*
 *_Made With 🤍_*
 ______________________________________
 ╔════◇
-║ *『AMAZING YOU'VE CHOSEN PRINCE JUNIOR V1』*
+║ *『AMAZING YOU'VE CHOSEN PRINCE JUNIOR V2』*
 ║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
 ╚════════════════════════╝
 ╔═════◇
 ║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
 ║
 ║❒ *Owner:* _https://wa.me/254723245807/message/Hello Junior_
-║❒ *Repo:* _https://github.com/Nyanuga/Nyanuga_
+║❒ *Repo:* _https://github.com/Nyanuga/prince-junior-v2
 ║❒ *WaGroup:* _https://chat.whatsapp.com/LLx80jCw3fsDm94T3hePE7_
 ║❒ *WaChannel:* _https://whatsapp.com/channel/0029Vb5U5AI3wtb8r6Gbex2p_
 ║❒ *Plugins:* _https://github.com/Nyanuga 
@@ -87,7 +87,7 @@ _Don't Forget To Give Star To My Repo_`
 					return await removeFile("temp/" + id);
 				} else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
 					await delay(10000);
-					PRINCE_JUNIOR_V1_QR_CODE();
+					PRINCE_JUNIOR_V2_QR_CODE();
 				}
 			});
 		} catch (err) {
@@ -100,6 +100,6 @@ _Don't Forget To Give Star To My Repo_`
 			await removeFile("temp/" + id);
 		}
 	}
-	return await PRINCE_JUNIOR_V1_QR_CODE()
+	return await PRINCE_JUNIOR_V2_QR_CODE()
 });
 module.exports = router
